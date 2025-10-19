@@ -7,7 +7,7 @@ from scipy.io import savemat
 from thop import profile
 from thop import clever_format
 
-#Custom Module
+#import Module
 from models.SSFEINet import SSFEINet
 
 from metrics import  calc_psnr as PSNR
@@ -79,7 +79,6 @@ with torch.no_grad():
         Y = Variable(Y).float()
         X = Variable(X).float()
         img_name = batch[3][0]
-        start_time = time.time()
 
         HX = model(Z,Y)
         HX = HX.clamp(min=0., max=1.)
