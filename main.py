@@ -6,19 +6,16 @@ import os
 import random
 import time
 import socket
+import torch.distributed as dist
 from torch.autograd import Variable
 from torch.optim.lr_scheduler import  MultiStepLR
 from torch.utils.data import DataLoader
 from datetime import datetime
 from torch.utils.tensorboard import SummaryWriter
-
-import torch.distributed as dist
 from torch.utils.data.distributed import DistributedSampler
 
-#Custom Module
-
+#import models
 from models.SSFEINet import SSFEINet
-
 
 import option
 from train import train
@@ -56,14 +53,6 @@ file_list = loadpath(file_path)
 HR_HSI, HR_MSI = prepare_data(opt.train_data_path,file_list, 20)
 train_set = cave_dataset(opt, HR_HSI, HR_MSI,file_list)
 
-## Load testing data
-key = 'Test.txt'
-file_path = opt.test_data_path + key
-file_list = loadpath(file_path)
-HR_HSI, HR_MSI = prepare_data(opt.test_data_path,file_list, 12)
-test_set = cave_dataset(opt, HR_HSI, HR_MSI, file_list, istrain=False)
-testing_data_loader = DataLoader(dataset=test_set, num_workers=opt.threads, batch_size=opt.test_batch_size, shuffle=False, pin_memory=True)
-
 if use_dist:
     sampler = DistributedSampler(train_set)
 
@@ -71,7 +60,6 @@ if use_dist:
     training_data_loader = DataLoader(dataset=train_set, num_workers=opt.threads, batch_size=opt.train_batch_size, sampler = sampler, pin_memory=True)
 else:
     training_data_loader = DataLoader(dataset=train_set, num_workers=opt.threads, batch_size=opt.train_batch_size, shuffle = True, pin_memory=True)
-
 
 print('===> Building model')
 print("===> distribute model")
@@ -90,8 +78,8 @@ if opt.arch == 'SSFEINet':
 
 if use_dist:
     model = torch.nn.parallel.DistributedDataParallel(model,find_unused_parameters=True,device_ids=[local_rank],output_device=local_rank)
+
 print('Arch:   {}'.format(opt.arch))
-print('Network parameters: {}'.format(sum(param.numel() for param in model.parameters()) / 1e6))
 optimizer = optim.Adam(model.parameters(), lr=opt.lr)
 scheduler = MultiStepLR(optimizer, milestones=list(range(50,200,5)), gamma=0.95)
 
@@ -119,7 +107,6 @@ mkdir(opt.save_folder)
 mkdir(opt.outputpath)
 
 def checkpoint(arch,epoch):
-
     model_out_path = opt.save_folder+"epoch_{}.pth".format(arch)
     if epoch % 1 == 0 and local_rank == 0:
         save_dict = dict(
@@ -130,9 +117,7 @@ def checkpoint(arch,epoch):
             scheduler = scheduler.state_dict()
         )
         torch.save(save_dict, model_out_path)
-
         print("Checkpoint saved to {}".format(model_out_path))
-
 
 start_time = time.time()
 print ('===>  Start Training: ')  
