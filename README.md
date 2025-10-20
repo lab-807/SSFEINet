@@ -12,7 +12,7 @@ This is the official code for the paper 'S<sup>2</sup>FEINet: A Spatial-Spectral
 
 * Download the WorldView-2 dataset from [here](https://liangjiandeng.github.io/PanCollection.html).
 
-## 2.Dataset
+## 2.Environment
 
 
 ## 3.Training
