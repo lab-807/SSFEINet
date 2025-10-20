@@ -1,0 +1,95 @@
+absl-py==2.1.0
+addict==2.4.0
+asttokens==3.0.0
+Brotli @ file:///work/ci_py311/brotli-split_1676830125088/work
+causal-conv1d @ file:///public/home/wudayun2023/causal_conv1d-1.0.0%2Bcu122torch2.1cxx11abiFALSE-cp311-cp311-linux_x86_64.whl#sha256=7586c759b034f7532dd16cda0c7ebe6710e6fb875007cc3dab65e4afca912c79
+certifi @ file:///croot/certifi_1720453481653/work/certifi
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+contourpy==1.2.1
+cycler==0.12.1
+Cython==3.0.12
+decorator==5.2.1
+einops==0.8.0
+executing==2.2.0
+filelock @ file:///croot/filelock_1700591183607/work
+fonttools==4.52.1
+fsspec==2024.5.0
+gmpy2 @ file:///work/ci_py311/gmpy2_1676839849213/work
+grpcio==1.64.0
+h5py==3.10.0
+huggingface-hub==0.24.5
+idna @ file:///work/ci_py311/idna_1676822698822/work
+imageio==2.34.1
+importlib_metadata==8.0.0
+ipdb==0.13.13
+ipython==9.1.0
+ipython_pygments_lexers==1.1.1
+jacinle==1.0.4
+jedi==0.19.2
+Jinja2 @ file:///croot/jinja2_1706733616596/work
+joblib==1.4.2
+kiwisolver==1.4.5
+lazy_loader==0.4
+mamba-ssm @ file:///public/home/wudayun2023/mamba_ssm-1.0.1%2Bcu122torch2.1cxx11abiFALSE-cp311-cp311-linux_x86_64.whl#sha256=3b3a55f4dd77c7e169c597853bba29667bb996b0405347d4b5095dfe4c9c243f
+Markdown==3.6
+MarkupSafe @ file:///croot/markupsafe_1704205993651/work
+matplotlib==3.9.0
+matplotlib-inline==0.1.7
+mkl-fft @ file:///croot/mkl_fft_1695058164594/work
+mkl-random @ file:///croot/mkl_random_1695059800811/work
+mkl-service==2.4.0
+mmcv-full==1.7.2
+mpmath @ file:///croot/mpmath_1690848262763/work
+networkx @ file:///croot/networkx_1690561992265/work
+ninja==1.11.1.1
+numpy @ file:///croot/numpy_and_numpy_base_1708638617955/work/dist/numpy-1.26.4-cp311-cp311-linux_x86_64.whl#sha256=5f96f274d410a1682519282ae769c877d32fdbf171aa8badec7bf5e1d3a1748a
+opencv-python==4.9.0.80
+packaging==24.0
+parso==0.8.4
+pexpect==4.9.0
+pillow @ file:///croot/pillow_1707233021655/work
+pkgconfig==1.5.5
+platformdirs==4.2.2
+prompt_toolkit==3.0.51
+protobuf==5.27.0
+ptyprocess==0.7.0
+pure_eval==0.2.3
+Pygments==2.19.1
+pyparsing==3.1.2
+PySocks @ file:///work/ci_py311/pysocks_1676822712504/work
+python-dateutil==2.9.0.post0
+PyWavelets==1.6.0
+PyYAML @ file:///croot/pyyaml_1698096049011/work
+pyzmq==26.4.0
+regex==2024.7.24
+requests @ file:///croot/requests_1707355572290/work
+safetensors==0.4.3
+scikit-image==0.23.2
+scikit-learn==1.5.0
+scipy==1.12.0
+six==1.16.0
+stack-data==0.6.3
+sympy @ file:///croot/sympy_1701397643339/work
+tabulate==0.9.0
+tensorboard==2.16.2
+tensorboard-data-server==0.7.2
+thop==0.1.1.post2209072238
+threadpoolctl==3.5.0
+tifffile==2024.5.22
+timm==1.0.3
+tokenizers==0.19.1
+tomli==2.0.1
+torch==2.1.2
+torchaudio==2.1.2
+torchvision==0.16.2
+tqdm==4.66.2
+traitlets==5.14.3
+transformers==4.43.3
+triton==2.1.0
+typing_extensions @ file:///croot/typing_extensions_1705599297034/work
+urllib3 @ file:///croot/urllib3_1707770551213/work
+wcwidth==0.2.13
+Werkzeug==3.0.3
+xlrd==2.0.1
+yapf==0.40.2
+zipp==3.19.2
