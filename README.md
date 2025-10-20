@@ -13,7 +13,7 @@ This is the official code for the paper 'S<sup>2</sup>FEINet: A Spatial-Spectral
 * Download the WorldView-2 dataset from [here](https://liangjiandeng.github.io/PanCollection.html).
 
 ## 2.Environment
-
+The environment is in the file: requirements.txt
 
 ## 3.Training
 To train the model, run the following command.
